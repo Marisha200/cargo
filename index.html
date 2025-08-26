@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerolíneas Argentinas Cargo - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.aerolineas.com.ar/images/logo-aerolineas-2022.svg" alt="Logo Aerolíneas Argentinas Cargo" height="40">
+                    <span>Cargo</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="cotizacion.html">Cotizar y Reservar</a></li>
+                    <li><a href="#">Seguimiento</a></li>
+                    <li><a href="#">Sucursales y Lockers</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <a href="#" class="btn btn-secondary">Iniciar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Enviá tus paquetes por Argentina y al mundo con nuestra confianza.</h1>
+                <p>Simple, rápido y seguro. Cotizá tu envío en segundos.</p>
+                
+                <div class="quote-box">
+                    <h2>Calculá tu envío ahora</h2>
+                    <form action="cotizacion.html" method="GET">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="alto">Alto (cm)</label>
+                                <input type="number" id="alto" name="alto" placeholder="Ej: 30" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ancho">Ancho (cm)</label>
+                                <input type="number" id="ancho" name="ancho" placeholder="Ej: 40" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="largo">Largo (cm)</label>
+                                <input type="number" id="largo" name="largo" placeholder="Ej: 50" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="peso">Peso (kg)</label>
+                                <input type="number" step="0.1" id="peso" name="peso" placeholder="Ej: 5.5" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">COTIZAR</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2>Enviar nunca fue tan fácil</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">1</div>
+                        <h3>Cotizá tu envío</h3>
+                        <p>Ingresá las dimensiones y el peso de tu paquete para obtener un precio al instante.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">2</div>
+                        <h3>Elegí cómo enviarlo</h3>
+                        <p>Seleccioná si querés que lo retiremos por tu domicilio o si preferís dejarlo en una sucursal o locker.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">3</div>
+                        <h3>Generá tu booking</h3>
+                        <p>Confirmá los datos, obtené tu etiqueta y despachá tu paquete. ¡Listo!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aerolíneas Argentinas S.A. Todos los derechos reservados.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

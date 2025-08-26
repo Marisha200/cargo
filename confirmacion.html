@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Envío - Aerolíneas Argentinas Cargo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.aerolineas.com.ar/images/logo-aerolineas-2022.svg" alt="Logo Aerolíneas Argentinas Cargo" height="40">
+                    <span>Cargo</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="confirmation-section">
+            <div class="container">
+                <div class="confirmation-box">
+                    <div class="success-icon">✅</div>
+                    <h1 class="success-message">¡Tu envío fue confirmado con éxito!</h1>
+                    <p>Hemos recibido tu pago y generado la guía aérea para tu paquete. Recibirás un correo electrónico con la etiqueta de envío y las instrucciones para el despacho.</p>
+                    
+                    <div class="awb-container">
+                        <h2>Número de Guía Aérea (AWB)</h2>
+                        <p class="awb-number" id="awb-number">Generando...</p>
+                        <p class="awb-disclaimer">Este es tu código de seguimiento. Guardalo para rastrear tu envío.</p>
+                    </div>
+
+                    <a href="index.html" class="btn btn-secondary">Volver al Inicio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // --- SIMULACIÓN DE API DE SMARTKARGO ---
+        // Esta función se ejecuta cuando la página termina de cargar.
+        window.onload = function() {
+            // 1. Simula un pequeño retraso, como si estuviera contactando a un servidor.
+            setTimeout(function() {
+                // 2. Genera un número aleatorio de 9 dígitos.
+                const randomPart = Math.floor(100000000 + Math.random() * 900000000);
+                
+                // 3. Concatena el prefijo fijo con el número aleatorio.
+                const awb = `044-${randomPart}`;
+                
+                // 4. Muestra el número de guía generado en la página.
+                document.getElementById('awb-number').textContent = awb;
+            }, 1000); // Retraso de 1 segundo (1000 ms) para simular la carga.
+        };
+    </script>
+
+</body>
+</html>

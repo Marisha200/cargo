@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar con Mercado Pago</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-box">
+            <img src="https://logotipoz.com/wp-content/uploads/2021/10/version-horizontal-large-logo-mercado-pago.png" alt="Mercado Pago" class="mp-logo">
+            <h2>Estás por pagar</h2>
+            <div class="payment-summary">
+                <span>Envío Aerolíneas Argentinas Cargo</span>
+                <span class="price">$ 12,000.00 ARS</span>
+            </div>
+            <div class="fake-form">
+                <label>Número de tarjeta</label>
+                <input type="text" placeholder="**** **** **** ****">
+                <div class="form-row-payment">
+                    <div>
+                        <label>Vencimiento</label>
+                        <input type="text" placeholder="MM/AA">
+                    </div>
+                    <div>
+                        <label>Código de seguridad</label>
+                        <input type="text" placeholder="CVC">
+                    </div>
+                </div>
+                <label>Nombre del titular</label>
+                <input type="text" placeholder="Como aparece en la tarjeta">
+            </div>
+            <a href="confirmacion.html" class="btn btn-primary btn-large btn-mp">Pagar</a>
+            <p class="secure-payment">Tu pago es procesado de forma segura.</p>
+        </div>
+    </div>
+</body>
+</html>
