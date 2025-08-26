@@ -82,7 +82,7 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block; /* Asegura consistencia */
+    display: inline-block;
 }
 
 .btn-primary {
@@ -365,7 +365,7 @@ input[type="text"], select {
 }
 
 .shipping-details {
-    padding-left: 30px; /* Alineado con el texto del label */
+    padding-left: 30px;
 }
 
 .delivery-time {
@@ -379,20 +379,8 @@ input[type="text"], select {
     color: var(--primary-color);
 }
 
-/* Media Query para pantallas de menos de 768px (tablets y móviles) */
-@media (max-width: 768px) {
-    .shipping-options {
-        /* Cambia a 1 columna */
-        grid-template-columns: 1fr;
-    }
-    .location-section {
-        flex-direction: column;
-    }
-}
-
 /* --- ESTILOS PARA PAGO Y CONFIRMACIÓN --- */
 
-/* --- Página de Pago Simulado --- */
 .payment-container {
     display: flex;
     justify-content: center;
@@ -476,7 +464,6 @@ input[type="text"], select {
     margin-top: 15px;
 }
 
-/* --- Página de Confirmación --- */
 .confirmation-section {
     padding: 60px 0;
 }
@@ -535,7 +522,6 @@ input[type="text"], select {
     margin-bottom: 0 !important;
 }
 
-
 /* --- Footer --- */
 footer {
     background-color: var(--secondary-color);
@@ -548,4 +534,152 @@ footer {
 footer a {
     color: var(--white-color);
     text-decoration: none;
+}
+
+/* --- Media Queries para Responsividad General --- */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    .navbar .nav-links {
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 38px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .quote-box {
+        padding: 25px;
+    }
+    .form-row {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .form-group {
+        flex: 1 1 calc(50% - 15px);
+    }
+    .how-it-works .steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .form-container {
+        padding: 30px;
+    }
+    .location-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .shipping-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+    .hero {
+        padding: 60px 0;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .quote-box {
+        padding: 20px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .form-group {
+        flex: 1 1 100%;
+    }
+    .how-it-works {
+        padding: 50px 0;
+    }
+    .how-it-works h2 {
+        font-size: 28px;
+    }
+    .step h3 {
+        font-size: 20px;
+    }
+    .form-step h3 {
+        font-size: 20px;
+    }
+    .location-group h4 {
+        font-size: 16px;
+    }
+    .options {
+        flex-direction: column;
+    }
+    .shipping-option {
+        padding: 15px;
+    }
+    .shipping-title label {
+        font-size: 18px;
+    }
+    .shipping-details {
+        padding-left: 25px;
+    }
+    .shipping-price {
+        font-size: 20px;
+    }
+    .success-icon {
+        font-size: 50px;
+    }
+    .success-message {
+        font-size: 24px;
+    }
+    .awb-number {
+        font-size: 28px;
+    }
+    .payment-box {
+        padding: 25px;
+        margin: 20px;
+    }
+    .payment-box h2 {
+        font-size: 24px;
+    }
+    .form-row-payment {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+    .quote-box h2 {
+        font-size: 22px;
+    }
+    .how-it-works h2 {
+        font-size: 24px;
+    }
+    .step h3 {
+        font-size: 18px;
+    }
+    .awb-number {
+        font-size: 24px;
+    }
 }
