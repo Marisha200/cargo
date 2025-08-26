@@ -684,4 +684,74 @@ footer a {
         font-size: 24px;
     }
 }
+/* --- NUEVOS ESTILOS PARA ORIGEN Y DESTINO --- */
+
+/* Oculta los paneles de contenido por defecto */
+.location-content {
+    display: none;
+    margin-top: 15px;
+    animation: fadeIn 0.5s;
+}
+
+/* Muestra el panel activo */
+.location-content.active {
+    display: block;
+}
+
+/* Contenedor para Calle y Código Postal */
+.form-row-address {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.address-street {
+    flex-grow: 3; /* Le da más espacio a la calle */
+}
+
+.address-zip {
+    flex-grow: 1; /* Le da menos espacio al CP */
+}
+
+/* Estilo para los campos autocompletados */
+input[readonly] {
+    background-color: #f0f2f5;
+    cursor: not-allowed;
+    color: #555;
+    border-style: dashed;
+}
+
+input.error {
+    color: #D83B01;
+    font-weight: bold;
+}
+
+/* Estilo para el texto de placeholder de Lockers */
+.placeholder-text {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+    color: #777;
+    border: 1px dashed #ddd;
+}
+
+/* Animación simple de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste responsivo para los campos de dirección */
+@media (max-width: 768px) {
+    .form-row-address {
+        flex-direction: column;
+        margin-bottom: 0;
+        gap: 0;
+    }
+    .form-row-address .form-group {
+        margin-bottom: 15px;
+    }
+}
+
 
