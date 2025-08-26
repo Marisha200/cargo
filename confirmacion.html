@@ -41,20 +41,12 @@
     </main>
     
     <script>
-        // --- SIMULACIÓN DE API DE SMARTKARGO ---
-        // Esta función se ejecuta cuando la página termina de cargar.
         window.onload = function() {
-            // 1. Simula un pequeño retraso, como si estuviera contactando a un servidor.
             setTimeout(function() {
-                // 2. Genera un número aleatorio de 9 dígitos.
                 const randomPart = Math.floor(100000000 + Math.random() * 900000000);
-                
-                // 3. Concatena el prefijo fijo con el número aleatorio.
                 const awb = `044-${randomPart}`;
-                
-                // 4. Muestra el número de guía generado en la página.
                 document.getElementById('awb-number').textContent = awb;
-            }, 1000); // Retraso de 1 segundo (1000 ms) para simular la carga.
+            }, 1000);
         };
     </script>
 
