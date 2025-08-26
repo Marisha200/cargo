@@ -89,7 +89,9 @@
                                     <p class="delivery-time">Llega en 48hs hábiles</p>
                                     <p class="shipping-price">$ 15,450.00</p>
                                 </div>
-                            </div> <div class="shipping-option">
+                            </div>
+
+                            <div class="shipping-option">
                                 <div class="shipping-title">
                                     <input type="radio" id="super-urgente" name="shipping_speed" value="super-urgente">
                                     <label for="super-urgente">Súper Urgente</label>
@@ -98,7 +100,10 @@
                                     <p class="delivery-time">Llega en 24hs hábiles</p>
                                     <p class="shipping-price">$ 22,100.00</p>
                                 </div>
-                            </div> <div class="shipping-option selected"> <div class="shipping-title">
+                            </div>
+
+                            <div class="shipping-option selected">
+                                <div class="shipping-title">
                                     <input type="radio" id="clasico" name="shipping_speed" value="clasico" checked>
                                     <label for="clasico">Clásico</label>
                                 </div>
@@ -106,7 +111,9 @@
                                     <p class="delivery-time">Llega en 72hs hábiles</p>
                                     <p class="shipping-price">$ 12,000.00</p>
                                 </div>
-                            </div> <div class="shipping-option">
+                            </div>
+
+                            <div class="shipping-option">
                                 <div class="shipping-title">
                                     <input type="radio" id="JetPaq" name="shipping_speed" value="JetPaq">
                                     <label for="JetPaq">JetPaq Promo</label>
@@ -115,7 +122,8 @@
                                     <p class="delivery-time">Llega en 96hs hábiles</p>
                                     <p class="shipping-price">$ 8,000.00</p>
                                 </div>
-                            </div> </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-step summary">
@@ -145,19 +153,11 @@
     </footer>
     
     <script>
-        // Script simple para la selección de modalidad
         document.querySelectorAll('.shipping-option').forEach(item => {
             item.addEventListener('click', event => {
-                // Quita la clase 'selected' de todos
                 document.querySelectorAll('.shipping-option').forEach(opt => opt.classList.remove('selected'));
-                
-                // Agrega la clase 'selected' al que fue clickeado
                 item.classList.add('selected');
-
-                // Marca el radio button correspondiente
                 item.querySelector('input[type="radio"]').checked = true;
-
-                // Aquí iría la lógica para actualizar el precio en el resumen
             });
         });
     </script>
