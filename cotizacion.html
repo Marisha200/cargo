@@ -149,7 +149,7 @@
     <footer>
         </footer>
     
-    <script>
+<script>
         // --- LÓGICA PARA PESTAÑAS (DOMICILIO, SUCURSAL, LOCKER) ---
         function setupTabs(groupElement) {
             const optionButtons = groupElement.querySelectorAll('.option-btn');
@@ -157,18 +157,12 @@
 
             optionButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Manejar estado activo de los botones
                     optionButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
 
-                    // Mostrar el contenido correspondiente
                     const targetId = groupElement.id + '-' + button.dataset.target;
                     contentPanels.forEach(panel => {
-                        if (panel.id === targetId) {
-                            panel.classList.add('active');
-                        } else {
-                            panel.classList.remove('active');
-                        }
+                        panel.classList.toggle('active', panel.id === targetId);
                     });
                 });
             });
@@ -177,17 +171,32 @@
         setupTabs(document.getElementById('origen-group'));
         setupTabs(document.getElementById('destino-group'));
 
+        // --- NUEVA LÓGICA PARA LEER CÓDIGOS POSTALES DESDE GITHUB ---
+        let postalCodesDB = {}; // Objeto para almacenar los códigos postales
 
-        // --- SIMULACIÓN DE API DE CÓDIGOS POSTALES ARGENTINOS ---
-        const postalCodesDB = {
-            "C1033": "CABA, Buenos Aires",
-            "B1636": "Olivos, Buenos Aires",
-            "B1870": "Avellaneda, Buenos Aires",
-            "X5000": "Córdoba, Córdoba",
-            "S2000": "Rosario, Santa Fe",
-            "M5500": "Mendoza, Mendoza"
-        };
+        // URL del archivo JSON en GitHub (¡RECUERDA CAMBIARLA POR LA TUYA!)
+        const postalCodesURL = 'https://raw.githubusercontent.com/tu-usuario/tu-repositorio/main/codigos_postales.json';
 
+        // 1. Cargar los datos del archivo JSON cuando la página inicie
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch(postalCodesURL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No se pudo cargar el archivo de códigos postales.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    postalCodesDB = data;
+                    console.log('Base de datos de códigos postales cargada.');
+                })
+                .catch(error => {
+                    console.error(error);
+                    // Opcional: Mostrar un error al usuario
+                });
+        });
+
+        // 2. Función para buscar el código postal en los datos cargados
         function setupPostalCodeAPI(inputId, outputId) {
             const inputCP = document.getElementById(inputId);
             const outputCiudad = document.getElementById(outputId);
@@ -195,11 +204,19 @@
             inputCP.addEventListener('input', () => {
                 const cp = inputCP.value.toUpperCase();
                 if (postalCodesDB[cp]) {
-                    outputCiudad.value = postalCodesDB[cp];
+                    const data = postalCodesDB[cp];
+                    outputCiudad.value = `${data.ciudad}, ${data.provincia}`;
                     outputCiudad.classList.remove('error');
                 } else {
-                    outputCiudad.value = "Código postal no encontrado";
-                    outputCiudad.classList.add('error');
+                    outputCiudad.value = " "; // Limpiar si no se encuentra
+                    outputCiudad.classList.remove('error');
+                }
+            });
+             inputCP.addEventListener('blur', () => { // Opcional: mostrar error al salir del campo
+                const cp = inputCP.value.toUpperCase();
+                if (!postalCodesDB[cp] && cp.length > 0) {
+                     outputCiudad.value = "Código postal no encontrado";
+                     outputCiudad.classList.add('error');
                 }
             });
         }
@@ -207,7 +224,7 @@
         setupPostalCodeAPI('origen-cp', 'origen-ciudad');
         setupPostalCodeAPI('destino-cp', 'destino-ciudad');
 
-        // Lógica anterior de selección de envío
+        // --- Lógica anterior de selección de envío (sin cambios) ---
         document.querySelectorAll('.shipping-option').forEach(item => {
             item.addEventListener('click', () => {
                 document.querySelectorAll('.shipping-option').forEach(opt => opt.classList.remove('selected'));
@@ -219,3 +236,4 @@
 
 </body>
 </html>
+
