@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizar - Aerolíneas Argentinas Cargo</title>
+    <title>Aerolíneas Argentinas Cargo - Inicio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,8 @@
                     <span>Cargo</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="cotizacion.html" class="active">Cotizar</a></li>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="cotizacion.html">Cotizar</a></li>
                     <li><a href="#">Seguimiento</a></li>
                     <li><a href="#">Sucursales y Lockers</a></li>
                     <li><a href="#">Contacto</a></li>
@@ -31,189 +31,68 @@
     </header>
 
     <main>
-        <section class="booking-process">
+        <section class="hero">
             <div class="container">
-                <h1>Completá los datos de tu envío</h1>
-                <div class="form-container">
-                    
-                    <div class="form-step">
-                        <h3>Paso 1: Origen y Destino</h3>
-                        <div class="location-section">
-                            
-                            <div class="location-group" id="origen-group">
-                                <h4>ORIGEN: ¿Desde dónde enviás?</h4>
-                                <div class="options">
-                                    <button class="option-btn active" data-target="domicilio">En Domicilio</button>
-                                    <button class="option-btn" data-target="sucursal">En Sucursal</button>
-                                    <button class="option-btn" data-target="locker">En Locker</button>
-                                </div>
-                                
-                                <div id="origen-domicilio" class="location-content active">
-                                    <div class="form-row-address">
-                                        <div class="form-group address-street">
-                                            <label for="origen-calle">Calle y Altura</label>
-                                            <input type="text" id="origen-calle" placeholder="Ej: Av. Rivadavia 1234">
-                                        </div>
-                                        <div class="form-group address-zip">
-                                            <label for="origen-cp">Código Postal</label>
-                                            <input type="text" id="origen-cp" placeholder="Ej: C1033">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="origen-ciudad">Ciudad / Provincia</label>
-                                        <input type="text" id="origen-ciudad" readonly placeholder="Se completará automáticamente">
-                                    </div>
-                                </div>
-
-                                <div id="origen-sucursal" class="location-content">
-                                    <div class="form-group">
-                                        <label for="origen-aeropuerto">Seleccioná un aeropuerto</label>
-                                        <select id="origen-aeropuerto">
-                                            <option value="" disabled selected>Aeropuertos disponibles...</option>
-                                            <option value="EZE">Buenos Aires - Ezeiza (EZE)</option>
-                                            <option value="AEP">Buenos Aires - Aeroparque (AEP)</option>
-                                            <option value="COR">Córdoba (COR)</option>
-                                            <option value="MDZ">Mendoza (MDZ)</option>
-                                            <option value="ROS">Rosario (ROS)</option>
-                                            <option value="BRC">Bariloche (BRC)</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div id="origen-locker" class="location-content">
-                                    <p class="placeholder-text">La selección de lockers estará disponible próximamente.</p>
-                                </div>
+                <h1>Enviá tus paquetes por Argentina y al mundo con nuestra confianza.</h1>
+                <p>Simple, rápido y seguro. Cotizá tu envío en segundos.</p>
+                
+                <div class="quote-box">
+                    <h2>Calculá tu envío ahora</h2>
+                    <form action="cotizacion.html" method="GET">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="alto">Alto (cm)</label>
+                                <input type="number" id="alto" name="alto" placeholder="Ej: 30" required>
                             </div>
-
-                            <div class="location-group" id="destino-group">
-                                <h4>DESTINO: ¿A dónde lo enviás?</h4>
-                                <div class="options">
-                                    <button class="option-btn active" data-target="domicilio">En Domicilio</button>
-                                    <button class="option-btn" data-target="sucursal">En Sucursal</button>
-                                    <button class="option-btn" data-target="locker">En Locker</button>
-                                </div>
-
-                                <div id="destino-domicilio" class="location-content active">
-                                    <div class="form-row-address">
-                                        <div class="form-group address-street">
-                                            <label for="destino-calle">Calle y Altura</label>
-                                            <input type="text" id="destino-calle" placeholder="Ej: Av. Colón 567">
-                                        </div>
-                                        <div class="form-group address-zip">
-                                            <label for="destino-cp">Código Postal</label>
-                                            <input type="text" id="destino-cp" placeholder="Ej: X5000">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="destino-ciudad">Ciudad / Provincia</label>
-                                        <input type="text" id="destino-ciudad" readonly placeholder="Se completará automáticamente">
-                                    </div>
-                                </div>
-
-                                <div id="destino-sucursal" class="location-content">
-                                     <div class="form-group">
-                                        <label for="destino-aeropuerto">Seleccioná un aeropuerto</label>
-                                        <select id="destino-aeropuerto">
-                                            <option value="" disabled selected>Aeropuertos disponibles...</option>
-                                            <option value="EZE">Buenos Aires - Ezeiza (EZE)</option>
-                                            <option value="AEP">Buenos Aires - Aeroparque (AEP)</option>
-                                            <option value="COR">Córdoba (COR)</option>
-                                            <option value="MDZ">Mendoza (MDZ)</option>
-                                            <option value="ROS">Rosario (ROS)</option>
-                                            <option value="BRC">Bariloche (BRC)</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div id="destino-locker" class="location-content">
-                                    <p class="placeholder-text">La selección de lockers estará disponible próximamente.</p>
-                                </div>
+                            <div class="form-group">
+                                <label for="ancho">Ancho (cm)</label>
+                                <input type="number" id="ancho" name="ancho" placeholder="Ej: 40" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="largo">Largo (cm)</label>
+                                <input type="number" id="largo" name="largo" placeholder="Ej: 50" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="peso">Peso (kg)</label>
+                                <input type="number" step="0.1" id="peso" name="peso" placeholder="Ej: 5.5" required>
                             </div>
                         </div>
-                    </div>
+                        <button type="submit" class="btn btn-primary">COTIZAR</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
+        <section class="how-it-works">
+            <div class="container">
+                <h2>Enviar nunca fue tan fácil</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">1</div>
+                        <h3>Cotizá tu envío</h3>
+                        <p>Ingresá las dimensiones y el peso de tu paquete para obtener un precio al instante.</p>
                     </div>
+                    <div class="step">
+                        <div class="step-icon">2</div>
+                        <h3>Elegí cómo enviarlo</h3>
+                        <p>Seleccioná si querés que lo retiremos por tu domicilio o si preferís dejarlo en una sucursal o locker.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">3</div>
+                        <h3>Generá tu booking</h3>
+                        <p>Confirmá los datos, obtené tu etiqueta y despachá tu paquete. ¡Listo!</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    
-    <script>
-        // --- LÓGICA PARA PESTAÑAS (DOMICILIO, SUCURSAL, LOCKER) ---
-        function setupTabs(groupElement) {
-            const optionButtons = groupElement.querySelectorAll('.option-btn');
-            const contentPanels = groupElement.querySelectorAll('.location-content');
 
-            optionButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    optionButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const targetId = groupElement.id + '-' + button.dataset.target;
-                    contentPanels.forEach(panel => {
-                        panel.classList.toggle('active', panel.id === targetId);
-                    });
-                });
-            });
-        }
-
-        setupTabs(document.getElementById('origen-group'));
-        setupTabs(document.getElementById('destino-group'));
-
-        // --- LÓGICA PARA LEER CÓDIGOS POSTALES DESDE EL SITIO ---
-        let postalCodesDB = {};
-        
-        // La URL ahora es una ruta relativa
-        const postalCodesURL = '/codigos_postales.json';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch(postalCodesURL)
-                .then(response => {
-                    if (!response.ok) throw new Error('No se pudo cargar el archivo de códigos postales.');
-                    return response.json();
-                })
-                .then(data => {
-                    postalCodesDB = data;
-                    console.log('Base de datos de códigos postales cargada.');
-                })
-                .catch(error => console.error(error));
-        });
-        
-        function setupPostalCodeAPI(inputId, outputId) {
-            const inputCP = document.getElementById(inputId);
-            const outputCiudad = document.getElementById(outputId);
-
-            inputCP.addEventListener('input', () => {
-                const cp = inputCP.value.toUpperCase();
-                if (postalCodesDB[cp]) {
-                    const data = postalCodesDB[cp];
-                    outputCiudad.value = `${data.ciudad}, ${data.provincia}`;
-                    outputCiudad.classList.remove('error');
-                } else {
-                    outputCiudad.value = " ";
-                    outputCiudad.classList.remove('error');
-                }
-            });
-             inputCP.addEventListener('blur', () => {
-                const cp = inputCP.value.toUpperCase();
-                if (!postalCodesDB[cp] && cp.length > 0) {
-                     outputCiudad.value = "Código postal no encontrado";
-                     outputCiudad.classList.add('error');
-                }
-            });
-        }
-
-        setupPostalCodeAPI('origen-cp', 'origen-ciudad');
-        setupPostalCodeAPI('destino-cp', 'destino-ciudad');
-
-        // --- Lógica de selección de envío ---
-        document.querySelectorAll('.shipping-option').forEach(item => {
-            item.addEventListener('click', () => {
-                document.querySelectorAll('.shipping-option').forEach(opt => opt.classList.remove('selected'));
-                item.classList.add('selected');
-                item.querySelector('input[type="radio"]').checked = true;
-            });
-        });
-    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aerolíneas Argentinas S.A. Todos los derechos reservados.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
