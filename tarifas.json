@@ -1,0 +1,29 @@
+{
+  "factores": {
+    "volumetrico": 5000,
+    "urgencia": {
+      "Clásico": 1.0,
+      "Urgente": 1.5,
+      "Súper Urgente": 2.2
+    }
+  },
+  "tarifas_sucursal": {
+    "AEP": { "COR": 250, "MDZ": 280, "USH": 600, "BRC": 550 },
+    "EZE": { "COR": 260, "MDZ": 290, "USH": 610, "BRC": 560 },
+    "COR": { "AEP": 250, "EZE": 260, "SLA": 300, "MDZ": 200 },
+    "MDZ": { "AEP": 280, "COR": 200, "SLA": 450 }
+  },
+  "zonas": {
+    "CABA": ["C1033"],
+    "GBA": ["B1636", "B1870"],
+    "CENTRO": ["X5000", "S2000"],
+    "CUYO": ["M5500"],
+    "NORTE": ["T4000", "A4400"],
+    "PATAGONIA": ["R8400"]
+  },
+  "tarifas_domicilio": {
+    "CABA": { "CABA": 150, "GBA": 180, "CENTRO": 350, "CUYO": 400, "NORTE": 500, "PATAGONIA": 800 },
+    "GBA": { "CABA": 180, "GBA": 200, "CENTRO": 380, "CUYO": 420, "NORTE": 530, "PATAGONIA": 850 },
+    "CENTRO": { "CABA": 350, "GBA": 380, "CENTRO": 200, "CUYO": 250, "NORTE": 300, "PATAGONIA": 900 }
+  }
+}
