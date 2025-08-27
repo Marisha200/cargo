@@ -50,39 +50,32 @@
                                 
                                 <div id="origen-domicilio" class="location-content active">
                                     <div class="form-row-address">
-                                        <div class="form-group address-street">
-                                            <label for="origen-calle">Calle y Altura</label>
-                                            <input type="text" id="origen-calle" placeholder="Ej: Av. Rivadavia 1234">
-                                        </div>
-                                        <div class="form-group address-zip">
-                                            <label for="origen-cp">Código Postal</label>
-                                            <input type="text" id="origen-cp" placeholder="Ej: C1033">
-                                        </div>
+                                        <div class="form-group address-street"><label for="origen-calle">Calle y Altura</label><input type="text" id="origen-calle" placeholder="Ej: Av. Rivadavia 1234"></div>
+                                        <div class="form-group address-zip"><label for="origen-cp">Código Postal</label><input type="text" id="origen-cp" placeholder="Ej: C1033"></div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="origen-ciudad">Ciudad / Provincia</label>
-                                        <input type="text" id="origen-ciudad" readonly placeholder="Se completará automáticamente">
-                                    </div>
+                                    <div class="form-group"><label for="origen-ciudad">Ciudad / Provincia</label><input type="text" id="origen-ciudad" readonly placeholder="Se completará automáticamente"></div>
                                 </div>
 
                                 <div id="origen-sucursal" class="location-content">
                                     <div class="form-group">
-                                        <label for="origen-aeropuerto">Seleccioná un aeropuerto</label>
+                                        <label for="origen-aeropuerto">Seleccioná un aeropuerto de origen</label>
                                         <select id="origen-aeropuerto">
                                             <option value="" disabled selected>Aeropuertos disponibles...</option>
-                                            <option value="EZE">Buenos Aires - Ezeiza (EZE)</option>
-                                            <option value="AEP">Buenos Aires - Aeroparque (AEP)</option>
-                                            <option value="COR">Córdoba (COR)</option>
-                                            <option value="MDZ">Mendoza (MDZ)</option>
-                                            <option value="ROS">Rosario (ROS)</option>
+                                            <option value="AEP">Aeroparque (AEP)</option>
+                                            <option value="EZE">Ezeiza (EZE)</option>
                                             <option value="BRC">Bariloche (BRC)</option>
+                                            <option value="COR">Córdoba (COR)</option>
+                                            <option value="IGR">Iguazú (IGR)</option>
+                                            <option value="MDZ">Mendoza (MDZ)</option>
+                                            <option value="NQN">Neuquén (NQN)</option>
+                                            <option value="ROS">Rosario (ROS)</option>
+                                            <option value="SLA">Salta (SLA)</option>
+                                            <option value="USH">Ushuaia (USH)</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div id="origen-locker" class="location-content">
-                                    <p class="placeholder-text">La selección de lockers estará disponible próximamente.</p>
-                                </div>
+                                <div id="origen-locker" class="location-content"><p class="placeholder-text">La selección de lockers estará disponible próximamente.</p></div>
                             </div>
 
                             <div class="location-group" id="destino-group">
@@ -95,146 +88,146 @@
 
                                 <div id="destino-domicilio" class="location-content active">
                                     <div class="form-row-address">
-                                        <div class="form-group address-street">
-                                            <label for="destino-calle">Calle y Altura</label>
-                                            <input type="text" id="destino-calle" placeholder="Ej: Av. Colón 567">
-                                        </div>
-                                        <div class="form-group address-zip">
-                                            <label for="destino-cp">Código Postal</label>
-                                            <input type="text" id="destino-cp" placeholder="Ej: X5000">
-                                        </div>
+                                        <div class="form-group address-street"><label for="destino-calle">Calle y Altura</label><input type="text" id="destino-calle" placeholder="Ej: Av. Colón 567"></div>
+                                        <div class="form-group address-zip"><label for="destino-cp">Código Postal</label><input type="text" id="destino-cp" placeholder="Ej: X5000"></div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="destino-ciudad">Ciudad / Provincia</label>
-                                        <input type="text" id="destino-ciudad" readonly placeholder="Se completará automáticamente">
-                                    </div>
+                                    <div class="form-group"><label for="destino-ciudad">Ciudad / Provincia</label><input type="text" id="destino-ciudad" readonly placeholder="Se completará automáticamente"></div>
                                 </div>
 
                                 <div id="destino-sucursal" class="location-content">
                                      <div class="form-group">
-                                        <label for="destino-aeropuerto">Seleccioná un aeropuerto</label>
+                                        <label for="destino-aeropuerto">Seleccioná un aeropuerto de destino</label>
                                         <select id="destino-aeropuerto">
                                             <option value="" disabled selected>Aeropuertos disponibles...</option>
-                                            <option value="EZE">Buenos Aires - Ezeiza (EZE)</option>
-                                            <option value="AEP">Buenos Aires - Aeroparque (AEP)</option>
-                                            <option value="COR">Córdoba (COR)</option>
-                                            <option value="MDZ">Mendoza (MDZ)</option>
-                                            <option value="ROS">Rosario (ROS)</option>
+                                            <option value="AEP">Aeroparque (AEP)</option>
+                                            <option value="EZE">Ezeiza (EZE)</option>
                                             <option value="BRC">Bariloche (BRC)</option>
+                                            <option value="COR">Córdoba (COR)</option>
+                                            <option value="IGR">Iguazú (IGR)</option>
+                                            <option value="MDZ">Mendoza (MDZ)</option>
+                                            <option value="NQN">Neuquén (NQN)</option>
+                                            <option value="ROS">Rosario (ROS)</option>
+                                            <option value="SLA">Salta (SLA)</option>
+                                            <option value="USH">Ushuaia (USH)</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div id="destino-locker" class="location-content">
-                                    <p class="placeholder-text">La selección de lockers estará disponible próximamente.</p>
-                                </div>
+                                <div id="destino-locker" class="location-content"><p class="placeholder-text">La selección de lockers estará disponible próximamente.</p></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-step">
-                        <h3>Paso 2: Descripción del envío</h3>
-                        </div>
-                    <div class="form-step">
-                        <h3>Paso 3: Modalidad de Envío</h3>
-                        </div>
+                    <div class="form-step"><h3>Paso 2: Descripción del envío</h3></div>
+                    <div class="form-step"><h3>Paso 3: Modalidad de Envío</h3></div>
+
                     <div class="form-step summary">
                         <h3>Paso 4: Resumen y Booking</h3>
+                        <div class="summary-details">
+                           <p><strong>Dimensiones:</strong> <span id="dims-summary">30cm x 40cm x 50cm</span></p>
+                           <p><strong>Peso:</strong> <span id="peso-summary">5.5 kg</span></p>
+                           <p><strong>Origen:</strong> <span id="origen-summary">Domicilio (Calle Falsa 123, CABA)</span></p>
+                           <p><strong>Destino:</strong> <span id="destino-summary">Domicilio (Av. Colón 500, Córdoba)</span></p>
+                           <p><strong>Modalidad:</strong> <span id="modalidad-summary">Clásico (Llega en 72hs)</span></p>
                         </div>
+                        <div class="final-quote">
+                            <h4>Total a pagar:</h4>
+                            <p class="price" id="precio-summary">$ 12,000.00 ARS</p>
+                        </div>
+                        <a href="pago_simulado.html" class="btn btn-primary btn-large">GENERAR BOOKING Y PAGAR</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        </footer>
     
-<script>
-        // --- LÓGICA PARA PESTAÑAS (DOMICILIO, SUCURSAL, LOCKER) ---
+    <footer></footer>
+    
+    <script>
+        // --- BASE DE DATOS Y LÓGICA DE CÓDIGOS POSTALES ---
+        let postalCodesDB = {};
+        const postalCodesURL = '/codigos_postales.json';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch(postalCodesURL)
+                .then(res => res.ok ? res.json() : Promise.reject(res))
+                .then(data => { postalCodesDB = data; console.log('Códigos postales cargados.'); })
+                .catch(err => console.error("Error cargando códigos postales:", err));
+        });
+
+        // --- FUNCIÓN PARA ACTUALIZAR EL RESUMEN ---
+        function actualizarResumen() {
+            // Lógica de Origen
+            const origenTab = document.querySelector('#origen-group .option-btn.active').dataset.target;
+            const origenSummary = document.getElementById('origen-summary');
+            if (origenTab === 'domicilio') {
+                const calle = document.getElementById('origen-calle').value;
+                const ciudad = document.getElementById('origen-ciudad').value;
+                origenSummary.textContent = `Domicilio (${calle || 'Dirección sin completar'}, ${ciudad || 'sin CP'})`;
+            } else if (origenTab === 'sucursal') {
+                const select = document.getElementById('origen-aeropuerto');
+                const aeropuerto = select.options[select.selectedIndex].text;
+                origenSummary.textContent = `Sucursal (${aeropuerto})`;
+            }
+
+            // Lógica de Destino
+            const destinoTab = document.querySelector('#destino-group .option-btn.active').dataset.target;
+            const destinoSummary = document.getElementById('destino-summary');
+            if (destinoTab === 'domicilio') {
+                const calle = document.getElementById('destino-calle').value;
+                const ciudad = document.getElementById('destino-ciudad').value;
+                destinoSummary.textContent = `Domicilio (${calle || 'Dirección sin completar'}, ${ciudad || 'sin CP'})`;
+            } else if (destinoTab === 'sucursal') {
+                const select = document.getElementById('destino-aeropuerto');
+                const aeropuerto = select.options[select.selectedIndex].text;
+                destinoSummary.textContent = `Sucursal (${aeropuerto})`;
+            }
+        }
+
+        // --- LÓGICA PARA PESTAÑAS (TABS) ---
         function setupTabs(groupElement) {
-            const optionButtons = groupElement.querySelectorAll('.option-btn');
-            const contentPanels = groupElement.querySelectorAll('.location-content');
-
-            optionButtons.forEach(button => {
+            groupElement.querySelectorAll('.option-btn').forEach(button => {
                 button.addEventListener('click', () => {
-                    optionButtons.forEach(btn => btn.classList.remove('active'));
+                    groupElement.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-
                     const targetId = groupElement.id + '-' + button.dataset.target;
-                    contentPanels.forEach(panel => {
+                    groupElement.querySelectorAll('.location-content').forEach(panel => {
                         panel.classList.toggle('active', panel.id === targetId);
                     });
+                    actualizarResumen(); // Actualiza el resumen al cambiar de pestaña
                 });
             });
         }
-
         setupTabs(document.getElementById('origen-group'));
         setupTabs(document.getElementById('destino-group'));
 
-        // --- NUEVA LÓGICA PARA LEER CÓDIGOS POSTALES DESDE GITHUB ---
-        let postalCodesDB = {}; // Objeto para almacenar los códigos postales
-
-        // URL del archivo JSON en GitHub (¡RECUERDA CAMBIARLA POR LA TUYA!)
-        const postalCodesURL = '/codigos_postales.json';
-
-        // 1. Cargar los datos del archivo JSON cuando la página inicie
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch(postalCodesURL)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('No se pudo cargar el archivo de códigos postales.');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    postalCodesDB = data;
-                    console.log('Base de datos de códigos postales cargada.');
-                })
-                .catch(error => {
-                    console.error(error);
-                    // Opcional: Mostrar un error al usuario
-                });
-        });
-
-        // 2. Función para buscar el código postal en los datos cargados
+        // --- LÓGICA PARA AUTOCOMPLETAR CÓDIGO POSTAL ---
         function setupPostalCodeAPI(inputId, outputId) {
             const inputCP = document.getElementById(inputId);
-            const outputCiudad = document.getElementById(outputId);
-
             inputCP.addEventListener('input', () => {
                 const cp = inputCP.value.toUpperCase();
+                const outputCiudad = document.getElementById(outputId);
                 if (postalCodesDB[cp]) {
                     const data = postalCodesDB[cp];
                     outputCiudad.value = `${data.ciudad}, ${data.provincia}`;
                     outputCiudad.classList.remove('error');
                 } else {
-                    outputCiudad.value = " "; // Limpiar si no se encuentra
+                    outputCiudad.value = "";
                     outputCiudad.classList.remove('error');
                 }
-            });
-             inputCP.addEventListener('blur', () => { // Opcional: mostrar error al salir del campo
-                const cp = inputCP.value.toUpperCase();
-                if (!postalCodesDB[cp] && cp.length > 0) {
-                     outputCiudad.value = "Código postal no encontrado";
-                     outputCiudad.classList.add('error');
-                }
+                actualizarResumen(); // Actualiza el resumen al escribir el CP
             });
         }
-
         setupPostalCodeAPI('origen-cp', 'origen-ciudad');
         setupPostalCodeAPI('destino-cp', 'destino-ciudad');
 
-        // --- Lógica anterior de selección de envío (sin cambios) ---
-        document.querySelectorAll('.shipping-option').forEach(item => {
-            item.addEventListener('click', () => {
-                document.querySelectorAll('.shipping-option').forEach(opt => opt.classList.remove('selected'));
-                item.classList.add('selected');
-                item.querySelector('input[type="radio"]').checked = true;
-            });
-        });
+        // --- EVENTOS PARA ACTUALIZAR EL RESUMEN EN TIEMPO REAL ---
+        document.getElementById('origen-calle').addEventListener('input', actualizarResumen);
+        document.getElementById('destino-calle').addEventListener('input', actualizarResumen);
+        document.getElementById('origen-aeropuerto').addEventListener('change', actualizarResumen);
+        document.getElementById('destino-aeropuerto').addEventListener('change', actualizarResumen);
+
     </script>
 
 </body>
 </html>
-
-
