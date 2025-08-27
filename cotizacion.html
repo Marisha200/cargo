@@ -48,7 +48,7 @@
                                     <button class="option-btn" data-target="locker">En Locker</button>
                                 </div>
                                 
-                                <div id="origen-domicilio" class="location-content active">
+                                <div id="origen-group-domicilio" class="location-content active">
                                     <div class="form-row-address">
                                         <div class="form-group address-street"><label for="origen-calle">Calle y Altura</label><input type="text" id="origen-calle" placeholder="Ej: Av. Rivadavia 1234"></div>
                                         <div class="form-group address-zip"><label for="origen-cp">Código Postal</label><input type="text" id="origen-cp" placeholder="Ej: C1033"></div>
@@ -56,7 +56,7 @@
                                     <div class="form-group"><label for="origen-ciudad">Ciudad / Provincia</label><input type="text" id="origen-ciudad" readonly placeholder="Se completará automáticamente"></div>
                                 </div>
 
-                                <div id="origen-sucursal" class="location-content">
+                                <div id="origen-group-sucursal" class="location-content">
                                     <div class="form-group">
                                         <label for="origen-aeropuerto">Seleccioná un aeropuerto de origen</label>
                                         <select id="origen-aeropuerto">
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
 
-                                <div id="origen-locker" class="location-content"><p class="placeholder-text">La selección de lockers estará disponible próximamente.</p></div>
+                                <div id="origen-group-locker" class="location-content"><p class="placeholder-text">La selección de lockers estará disponible próximamente.</p></div>
                             </div>
 
                             <div class="location-group" id="destino-group">
@@ -92,7 +92,7 @@
                                     <button class="option-btn" data-target="locker">En Locker</button>
                                 </div>
 
-                                <div id="destino-domicilio" class="location-content active">
+                                <div id="destino-group-domicilio" class="location-content active">
                                     <div class="form-row-address">
                                         <div class="form-group address-street"><label for="destino-calle">Calle y Altura</label><input type="text" id="destino-calle" placeholder="Ej: Av. Colón 567"></div>
                                         <div class="form-group address-zip"><label for="destino-cp">Código Postal</label><input type="text" id="destino-cp" placeholder="Ej: X5000"></div>
@@ -100,7 +100,7 @@
                                     <div class="form-group"><label for="destino-ciudad">Ciudad / Provincia</label><input type="text" id="destino-ciudad" readonly placeholder="Se completará automáticamente"></div>
                                 </div>
 
-                                <div id="destino-sucursal" class="location-content">
+                                <div id="destino-group-sucursal" class="location-content">
                                      <div class="form-group">
                                         <label for="destino-aeropuerto">Seleccioná un aeropuerto de destino</label>
                                         <select id="destino-aeropuerto">
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
 
-                                <div id="destino-locker" class="location-content"><p class="placeholder-text">La selección de lockers estará disponible próximamente.</p></div>
+                                <div id="destino-group-locker" class="location-content"><p class="placeholder-text">La selección de lockers estará disponible próximamente.</p></div>
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
     <footer>...</footer>
     
     <script>
-        // --- BASE DE DATOS Y LÓGICA DE CÓDIGOS POSTALES ---
+        // --- El script no necesita cambios, solo los IDs del HTML ---
         let postalCodesDB = {};
         const postalCodesURL = '/codigos_postales.json';
 
@@ -165,11 +165,11 @@
                 .then(res => res.ok ? res.json() : Promise.reject(res))
                 .then(data => { postalCodesDB = data; console.log('Códigos postales cargados.'); })
                 .catch(err => console.error("Error cargando códigos postales:", err));
+            
+            actualizarResumen(); // Llamada inicial para que el resumen no esté vacío
         });
 
-        // --- FUNCIÓN PARA ACTUALIZAR EL RESUMEN ---
         function actualizarResumen() {
-            // Lógica de Origen
             const origenTab = document.querySelector('#origen-group .option-btn.active').dataset.target;
             const origenSummary = document.getElementById('origen-summary');
             if (origenTab === 'domicilio') {
@@ -178,7 +178,7 @@
                 origenSummary.textContent = `Domicilio (${calle || 'Dirección sin completar'}, ${ciudad || 'sin CP'})`;
             } else if (origenTab === 'sucursal') {
                 const select = document.getElementById('origen-aeropuerto');
-                if (select.value) { // Revisa si se ha seleccionado algo
+                if (select.value) {
                     const aeropuerto = select.options[select.selectedIndex].text;
                     origenSummary.textContent = `Sucursal (${aeropuerto})`;
                 } else {
@@ -186,7 +186,6 @@
                 }
             }
 
-            // Lógica de Destino
             const destinoTab = document.querySelector('#destino-group .option-btn.active').dataset.target;
             const destinoSummary = document.getElementById('destino-summary');
             if (destinoTab === 'domicilio') {
@@ -195,7 +194,7 @@
                 destinoSummary.textContent = `Domicilio (${calle || 'Dirección sin completar'}, ${ciudad || 'sin CP'})`;
             } else if (destinoTab === 'sucursal') {
                 const select = document.getElementById('destino-aeropuerto');
-                if (select.value) { // Revisa si se ha seleccionado algo
+                if (select.value) {
                     const aeropuerto = select.options[select.selectedIndex].text;
                     destinoSummary.textContent = `Sucursal (${aeropuerto})`;
                 } else {
@@ -204,7 +203,6 @@
             }
         }
 
-        // --- LÓGICA PARA PESTAÑAS (TABS) ---
         function setupTabs(groupElement) {
             groupElement.querySelectorAll('.option-btn').forEach(button => {
                 button.addEventListener('click', () => {
@@ -221,25 +219,29 @@
         setupTabs(document.getElementById('origen-group'));
         setupTabs(document.getElementById('destino-group'));
 
-        // --- LÓGICA PARA AUTOCOMPLETAR CÓDIGO POSTAL ---
         function setupPostalCodeAPI(inputId, outputId) {
             const inputCP = document.getElementById(inputId);
             inputCP.addEventListener('input', () => {
-                // ... (código sin cambios)
+                const cp = inputCP.value.toUpperCase();
+                const outputCiudad = document.getElementById(outputId);
+                if (postalCodesDB[cp]) {
+                    const data = postalCodesDB[cp];
+                    outputCiudad.value = `${data.ciudad}, ${data.provincia}`;
+                    outputCiudad.classList.remove('error');
+                } else {
+                    outputCiudad.value = "";
+                    outputCiudad.classList.remove('error');
+                }
                 actualizarResumen();
             });
         }
         setupPostalCodeAPI('origen-cp', 'origen-ciudad');
         setupPostalCodeAPI('destino-cp', 'destino-ciudad');
 
-        // --- EVENTOS PARA ACTUALIZAR EL RESUMEN EN TIEMPO REAL ---
         document.getElementById('origen-calle').addEventListener('input', actualizarResumen);
         document.getElementById('destino-calle').addEventListener('input', actualizarResumen);
         document.getElementById('origen-aeropuerto').addEventListener('change', actualizarResumen);
         document.getElementById('destino-aeropuerto').addEventListener('change', actualizarResumen);
-
-        // Llamada inicial para que el resumen no esté vacío
-        actualizarResumen();
     </script>
 
 </body>
