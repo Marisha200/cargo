@@ -1,0 +1,12 @@
+{
+  "C1033": { "ciudad": "Monserrat", "provincia": "CABA" },
+  "B1636": { "ciudad": "Olivos", "provincia": "Buenos Aires" },
+  "B1870": { "ciudad": "Avellaneda", "provincia": "Buenos Aires" },
+  "B1900": { "ciudad": "La Plata", "provincia": "Buenos Aires" },
+  "X5000": { "ciudad": "Córdoba Centro", "provincia": "Córdoba" },
+  "S2000": { "ciudad": "Rosario", "provincia": "Santa Fe" },
+  "M5500": { "ciudad": "Mendoza", "provincia": "Mendoza" },
+  "T4000": { "ciudad": "San Miguel de Tucumán", "provincia": "Tucumán" },
+  "A4400": { "ciudad": "Salta", "provincia": "Salta" },
+  "R8400": { "ciudad": "San Carlos de Bariloche", "provincia": "Río Negro" }
+}
